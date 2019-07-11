@@ -23,7 +23,7 @@ from PyQt5.QtCore import QByteArray
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtCore import pyqtSignal
 
-__author__ = "Deokyu Lim <hong18s@gmail.com>"
+__author__ = "Deo18s@gmail.com>"
 __platform__ = sys.platform
 
 
@@ -135,6 +135,8 @@ class SerialController(QWidget):
         self.serial_info = QSerialPortInfo()
         self.serial_read_thread = SerialReadThread(self.serial)
         self.serial_read_thread.received_data.connect(lambda v: self.received_data.emit(v))
+
+
         self.serial_read_thread.start()
 
         self.init_widget()
